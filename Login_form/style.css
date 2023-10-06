@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+*:focus {
+    outline:none
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+} 
+
+
+.container {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+    display:flex;
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+
+.circle {
+    position: relative ;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0, 0.8);
+    background: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+} 
+
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1005;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    animation: pulse 1s linear infinite;
+    z-index: -1;
+}
+
+
+@keyframes pulse  {
+    0% {
+        width:100%;
+        height: 100%;
+        opacity: 1
+    }
+
+    100% {
+        width: 150%;
+        height: 150%;
+        opacity: 0;
+    }
+}
+
+
+.form-container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+input {
+    background: rgba(255,255,255,0.15);
+    border: 2px solid #fff;
+    padding: 5px 20px;
+    height: 30px;
+    width: 250px;
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0;
+
+}
+
+
+::placeholder {
+    color: #fff;
+    text-transform: capitalize;
+} 
+
+.submit-btn {
+    padding: 8px 30px;
+    border: none;
+    background-color: orange;
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    bottom: -30px;
+    cursor: pointer;
+    transition: .5s;
+    border-radius: 10px;
+    text-transform: capitalize;
+} 
+
+
+.submit-btn:hover {
+    background-color: blue;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.8);
+}

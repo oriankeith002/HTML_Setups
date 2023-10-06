@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&W_on_mouse</title>
+</head>
+<body>
+    <div class="first"></div>
+    <div class="second"></div> 
+
+    <script>
+        const div = document.querySelector('.first');
+
+        window.onmousemove = (e) => {
+            div.style.width = `${e.screenX}px`;
+        }
+    </Script>
+</body>
+</html>
